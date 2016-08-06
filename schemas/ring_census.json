@@ -1,0 +1,147 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+  "properties": {
+  "ring_id": {
+    "description": "The id of the habitat ring **Assuming UUID** ",
+    "type": "string",
+    "required": true,
+    "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+  },
+  "ring_alias": {
+    "description": "Alias for the habitat ring",
+    "type": "string",
+    "required": true
+  },
+  "last_update": {
+    "description": "The time at which the message was sent in UTC.",
+    "type": "string",
+    "required": true,
+    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+  },
+  "prism_ip_address": {
+    "description": "The IP address of the PRISM sending messages out.",
+    "type": "string",
+    "required": true,
+  },
+  "service_groups": {
+    "type": "array",
+    "uniqueItems": true,
+    "required": true,
+    "minItems": 1,
+      "service_group": {
+        "type": "object",
+        "properties": {
+            "name": {
+              "description" : "Name of the service group. Format is service.group_name",
+              "type" : "string",
+              "required": true
+            },
+            "in_event": {
+              "description" : "A leader election event is underway",
+              "type" : "boolean",
+              "required": true
+            },
+            "service": {
+              "description" : "A service in Habitat is defined as a Habitat package running under a Habitat supervisor.",
+              "type" : "string",
+              "required": true
+            },
+            "group": {
+              "description" : "A service group is a logical grouping of services with the same package and topology type connected together in a ring.",
+              "type" : "string",
+              "required": true
+            },
+            "organization": {
+              "description" : "Organization that the service group is bound to.",
+              "type" : ["string", "null"],
+              "required": true
+            },
+            "members": {
+              "type": "object",
+              "uniqueItems": true,
+              "required": true,
+               "patternProperties": {
+                 "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-2][0-9]{2}:[0-9]{2}:[0-9]{2}Z$" : {
+                      "member_id": {
+                       "description" : "UUID identity of the member",
+                       "type" : "string",
+                       "required" : true
+                      },
+                      "leader": {
+                        "description" : "True if this member is a leader",
+                        "type" : "boolean",
+                        "required" : true
+                      },
+                      "ip": {
+                        "description" : "The IP address of the member",
+                        "type" : "string",
+                        "required" : true
+                      },
+                     "hostname": {
+                        "description" : "The hostname of the member.",
+                        "type" : "string",
+                        "required" : true
+                     },
+                     "status": {
+                        "description" : "Status of the member ",
+                        "type" : "string",
+                        "required" : true,
+                        "enum": ["alive", "suspect", "confirmed", "detached"]
+                     },
+                     "vote": {
+                        "description" : "The value of this member's vote during an election.",
+                        "type" : [ "string", "null" ],
+                        "required" : true
+                     },
+                     "election": {
+                        "description" : "True if we are in an election",
+                        "type" : [ "boolean", "null" ],
+                        "required" : true
+                     },
+                     "needs_write": {
+                        "description" : "Set to 'true' if we have data that needs to be sent to a configuration file",
+                        "type" : [ "boolean", "null" ],
+                        "required" : true
+                     },
+                     "initialized": {
+                        "description" : "Application initialization status",
+                        "type" : "boolean",
+                        "required" : true
+                     },
+                     "suitability": {
+                        "description" : "This is an arbitrary determination of our 'suitability' to a task; most likely, being the leader in an election.",
+                        "type" : "integer",
+                        "required" : true
+                     },
+                     "port": {
+                        "description" : "Often used as default for watches",
+                        "type" : ["string", "null"],
+                        "required" : true
+                     },
+                     "exposes": {
+                       "description": "Ports exposed by this member.",
+                       "type": "array",
+                       "required" : true,
+                       "uniqueItems": true,
+                       "items": {
+                          "type": "string"
+                        }
+                      },
+                     "incarnation": {
+                       "description" : "Lamport clock to track messages about this member.",
+                       "type": "object",
+                       "required" : true,
+                       "counter": {
+                          "description" : "Every time a member receives a Suspect or Confirmed message about their own entry in the MemberList, we update the Incarnation counter. Type of u64",
+                          "type": "string"
+                        }
+                     }
+                   }
+                 }
+               }
+            }
+          }
+        }
+      }
+}

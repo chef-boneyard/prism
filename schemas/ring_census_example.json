@@ -1,0 +1,37 @@
+{
+  "ring_id": "fe24c8cf-470a-45bb-986a-3cc3516ba8c9",
+  "ring_alias": "string",
+  "last_update": "2016-12-15T07:30:40Z",
+  "prism_ip_address": "",
+  "service_groups": [
+    "service_group" {
+      "name": "elasticsearch.default",
+      "in_event": false,
+      "service": "elasticsearch",
+      "group": "default",
+      "organization": "dev",
+      "members": {
+        "b4c6e4e0-5cc2-420e-adbf-bdb27e891f54": {
+          "member_id": "b4c6e4e0-5cc2-420e-adbf-bdb27e891f54",
+          "ip": "192.168.66.33",
+          "leader": true,
+          "hostname": "testmachine",
+          "status": "alive",
+          "vote": null,
+          "election": null,
+          "needs_write": null,
+          "initialized": false,
+          "suitability": 0,
+          "port": "9200",
+          "exposes": [
+              "9200",
+              "9300"
+          ],
+          "incarnation": {
+            "counter": 0
+          }
+        }
+      }
+    }
+  ]
+}
