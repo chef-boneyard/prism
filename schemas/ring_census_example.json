@@ -4,7 +4,7 @@
   "last_update": "2016-12-15T07:30:40Z",
   "prism_ip_address": "",
   "service_groups": [
-    "service_group" {
+     {
       "name": "elasticsearch.default",
       "in_event": false,
       "service": "elasticsearch",

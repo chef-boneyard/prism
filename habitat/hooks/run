@@ -1,0 +1,13 @@
+#!/bin/sh
+export PRISM_PATH={{pkg.path}}
+export GEM_HOME="${PRISM_PATH}/dist/prism-0.0.1/vendor/bundle/ruby/2.3.0"
+export GEM_PATH="$(hab pkg path core/ruby)/lib/ruby/gems/2.3.0:$(hab pkg path core/bundler):$GEM_HOME"
+export LD_LIBRARY_PATH="$(hab pkg path core/gcc-libs)/lib"
+export PATH="$PATH:${PRISM_PATH}/dist/bin"
+
+cd $PRISM_PATH/dist/
+
+echo $GEM_HOME
+echo $GEM_PATH
+exec 2>&1
+exec ruby ./prism-0.0.1/lib/habistone.rb

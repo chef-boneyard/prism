@@ -11,7 +11,7 @@
   "ring_alias": {
     "description": "Alias for the habitat ring",
     "type": "string",
-    "required": true
+    "required": false
   },
   "last_update": {
     "description": "The time at which the message was sent in UTC.",
@@ -22,14 +22,14 @@
   "prism_ip_address": {
     "description": "The IP address of the PRISM sending messages out.",
     "type": "string",
-    "required": true,
+    "required": true
   },
   "service_groups": {
     "type": "array",
     "uniqueItems": true,
     "required": true,
     "minItems": 1,
-      "service_group": {
+      "items": {
         "type": "object",
         "properties": {
             "name": {
