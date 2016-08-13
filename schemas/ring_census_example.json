@@ -4,7 +4,7 @@
   "last_update": "2016-12-15T07:30:40Z",
   "prism_ip_address": "",
   "service_groups": [
-    "service_group" {
+     {
       "name": "elasticsearch.default",
       "in_event": false,
       "service": "elasticsearch",
@@ -12,6 +12,7 @@
       "organization": "dev",
       "members": {
         "b4c6e4e0-5cc2-420e-adbf-bdb27e891f54": {
+          "census_id": "d72234c1-a7bb-4a78-8c7a-a7b06e3f3c20",
           "member_id": "b4c6e4e0-5cc2-420e-adbf-bdb27e891f54",
           "ip": "192.168.66.33",
           "leader": true,
