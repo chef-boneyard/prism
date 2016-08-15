@@ -12,7 +12,7 @@ pkg_build_deps=(
 )
 pkg_lib_dirs=(lib)
 pkg_bin_dirs=(bin)
-pkg_svc_run=(hab pkg exec core/ruby ruby {{pkg.path}}/dist/prism-0.0.1/lib/habistone.rb)
+
 do_download() {
   return 0
 }
@@ -30,8 +30,8 @@ do_unpack() {
 }
 
 do_build() {
-  mkdir -p $pkg_dirname
-  cp -r $PLAN_CONTEXT/../app/* $pkg_dirname
+  mkdir -p $pkg_name
+  cp -r $PLAN_CONTEXT/../app/* $pkg_name
   export CPPFLAGS="${CPPFLAGS} ${CFLAGS}"
 
   local _bundler_dir=$(pkg_path_for bundler)
@@ -39,7 +39,7 @@ do_build() {
   export GEM_HOME=${pkg_path}/vendor/bundle
   export GEM_PATH=${_bundler_dir}:${GEM_HOME}
 
-  cd $pkg_dirname
+  cd $pkg_name
   bundle install --jobs 2 --retry 5 --path vendor/bundle --binstubs
 }
 

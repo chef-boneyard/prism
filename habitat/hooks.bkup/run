@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec hab pkg exec core/ruby ruby {{pkg.path}}/dist/prism-0.0.1/lib/habistone.rb 2>&1

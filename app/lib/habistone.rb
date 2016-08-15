@@ -1,14 +1,30 @@
 require 'rest-client'
+require 'json'
+require 'habistone/cli'
+require 'habistone/config'
 
 class Habistone
-  def absorb
-    puts 'Retrieving census from ring'
-    response = RestClient.get 'http://localhost:9631/census'
-
+  def initialize
+    cli = Habistone::Cli.new
+    cli.parse_options
+    Habistone::Config.new(cli.config['config_file'])
   end
 
-  def emit
+  def absorb
+    puts 'Retrieving census from ring'
+    RestClient.get 'http://localhost:9631/census'
+  end
+
+  def emit(message)
+    data_collector = ENV['DATA_COLLECTOR_URL'] || 'http://localhost/data_collector/v0/'
+    data_collector_token = ENV['TOKEN'] || '93a49a4f2482c64126f7b6015e6b0f30284287ee4054ff8807fb63d9cbd1c506'
     puts 'Posting to visibility'
+    RestClient::Request.execute(
+      method: 'post',
+      url: data_collector,
+      payload: message.to_json,
+      headers: { 'x-data-collector-token' => data_collector_token }
+    )
   end
 
   def refract(json)
@@ -16,7 +32,7 @@ class Habistone
     censuses = ring_census['census_list']['censuses']
     service_groups = refract_service_groups(censuses)
 
-    vis_census = {
+    {
       :ring_id => 'eb388e2f-9736-4e57-a36a-176451b8a302',
       :last_update => Time.now.strftime('%Y-%m-%dT%H:%M:%SZ'),
       :prism_ip_address => ring_census['me']['ip'],
@@ -24,34 +40,19 @@ class Habistone
         service_groups
       ]
     }
-    puts vis_census
-    return vis_census
   end
 
   def refract_service_groups(censuses)
-     censuses.each do |census, service_group|
-            service_group_name = census[0]
-            return {
-              :name=>service_group_name,
-              :in_event=>service_group['in_event'],
-              :service=>service_group['service'],
-              :group=>service_group['group'],
-              :organization=>service_group['organization']
-              #TODO members
-            }#TODO return all censuses
-      end
-  end
-end
-
-
-if __FILE__ == $0
-
-  wavelength = 5
-  $stdout.sync = true
-  loop do
-    t = Time.now
-    absorb;
-    emit;
-    sleep(t + wavelength - Time.now)
+    censuses.each do |census, service_group|
+      service_group_name = census[0]
+      {
+        :name=>service_group_name,
+        :in_event=>service_group['in_event'],
+        :service=>service_group['service'],
+        :group=>service_group['group'],
+        :organization=>service_group['organization']
+          #TODO members
+        }#TODO return all censuses
+    end
   end
 end
