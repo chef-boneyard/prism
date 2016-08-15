@@ -7,18 +7,18 @@ class Habistone
   def initialize
     cli = Habistone::Cli.new
     cli.parse_options
-    Habistone::Config.new(cli.config['config_file'])
+    Habistone::Config.from_file(cli.config[:config_file])
+    Habistone::Config.merge!(cli.config)
   end
 
   def absorb
-    puts 'Retrieving census from ring'
     RestClient.get 'http://localhost:9631/census'
   end
 
   def emit(message)
-    data_collector = ENV['DATA_COLLECTOR_URL'] || 'http://localhost/data_collector/v0/'
-    data_collector_token = ENV['TOKEN'] || '93a49a4f2482c64126f7b6015e6b0f30284287ee4054ff8807fb63d9cbd1c506'
-    puts 'Posting to visibility'
+    data_collector = Habistone::Config.data_collector_url
+    data_collector_token = Habistone::Config.data_collector_token
+
     RestClient::Request.execute(
       method: 'post',
       url: data_collector,

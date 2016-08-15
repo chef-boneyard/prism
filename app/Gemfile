@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rspec', :require => 'spec'
 gem 'json'
 gem 'rest-client'
+gem 'mixlib-cli'
+gem 'mixlib-config'
 
 group :test do
   gem 'json-schema'
