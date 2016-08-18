@@ -1,0 +1,14 @@
+#!/bin/sh
+export PRISM_PATH={{pkg.path}}
+export GEM_HOME="${PRISM_PATH}/dist/prism/vendor/bundle/ruby/2.3.0"
+export GEM_PATH="$(hab pkg path core/ruby)/lib/ruby/gems/2.3.0:$(hab pkg path core/bundler):$GEM_HOME"
+export LD_LIBRARY_PATH="$(hab pkg path core/gcc-libs)/lib"
+export PATH="$PATH:${PRISM_PATH}/dist/bin"
+
+cd $PRISM_PATH/dist/
+
+echo $GEM_HOME
+echo $GEM_PATH
+exec ruby ./prism/bin/prism.rb --config {{pkg.svc_config_path}}/habistone.rb 2>&1
+
+# DATA_COLLECTOR_API=nginx -> 172.16.x.x

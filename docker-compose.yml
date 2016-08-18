@@ -1,0 +1,19 @@
+version: '2'
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=insights
+      - RABBITMQ_DEFAULT_PASS=chefrocks
+      - RABBITMQ_DEFAULT_VHOST=/insights
+  visibility_api:
+    build: ${AUTOMATE_DIR}/insights/visibility-api
+    ports:
+      - "80:8585"
+    links:
+      - rabbitmq
+    environment:
+      - AMQP_HOST=rabbitmq
