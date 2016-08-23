@@ -1,6 +1,7 @@
 require 'rubygems'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'habistone'
+require 'ring_walker'
 
 wavelength = 30
 $stdout.sync = true

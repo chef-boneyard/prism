@@ -2,6 +2,7 @@ require 'rest-client'
 require 'json'
 require 'habistone/cli'
 require 'habistone/config'
+require 'ring_walker'
 
 class Habistone
   def initialize
@@ -16,6 +17,10 @@ class Habistone
       puts "Habitat ring id: #{Habistone::Config.habitat_ring_id}"
       puts "Habitat ring alias: #{Habistone::Config.habitat_ring_alias}"
     end
+    ring_walker = RingWalker.new
+    #probably needs all config, just putting this here for now
+    #potentially we want prism.rb to call ring_walker instead of habistone
+    ring_walker.walk(Habistone::Config.supervisor_host)
   end
 
   def absorb
