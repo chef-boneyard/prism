@@ -31,19 +31,19 @@ do_unpack() {
 }
 
 do_build() {
-  mkdir -p $pkg_name
-  cp -r $PLAN_CONTEXT/../app/* $pkg_name
+  mkdir -p "${pkg_name}"
+  cp -r "${PLAN_CONTEXT}/../app/*" "${pkg_name}"
   export CPPFLAGS="${CPPFLAGS} ${CFLAGS}"
 
   local _bundler_dir=$(pkg_path_for bundler)
 
-  export GEM_HOME=${pkg_path}/vendor/bundle
-  export GEM_PATH=${_bundler_dir}:${GEM_HOME}
+  export GEM_HOME="${pkg_path}/vendor/bundle"
+  export GEM_PATH="${_bundler_dir}:${GEM_HOME}"
 
-  cd $pkg_name
+  cd "${pkg_name}"
   bundle install --jobs 2 --retry 5 --path vendor/bundle --binstubs
 }
 
 do_install() {
-  cp -R . ${pkg_prefix}/dist
+  cp -R . "${pkg_prefix}/dist"
 }
