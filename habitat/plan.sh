@@ -1,6 +1,6 @@
 pkg_name=prism
 pkg_version=0.0.1
-pkg_origin=automate
+pkg_origin=chef
 pkg_license=('Apache-2.0')
 pkg_upstream_url=https://github.com/chef/prism
 pkg_source=localsource.tar.gz
