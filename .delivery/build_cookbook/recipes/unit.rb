@@ -4,10 +4,16 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-execute 'bundle install' do
+gem_cache = File.join(node['delivery']['workspace']['root'], '../../../project_gem_cache')
+
+ruby_execute 'bundle install' do
+  version node['build_cookbook']['ruby_version']
   cwd File.join(delivery_workspace_repo, 'app')
+  environment('BUNDLE_PATH' => gem_cache)
 end
 
-execute 'bundle exec rspec' do
+ruby_execute 'bundle exec rspec' do
+  version node['build_cookbook']['ruby_version']
   cwd File.join(delivery_workspace_repo, 'app')
+  environment('BUNDLE_PATH' => gem_cache)
 end
