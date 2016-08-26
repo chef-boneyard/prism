@@ -4,6 +4,7 @@ maintainer_email 'dev@chef.io'
 license 'Apache-2.0'
 version '0.1.0'
 
+depends 'languages'
 depends 'delivery-sugar'
 depends 'delivery_build'
 depends 'habitat-build'
