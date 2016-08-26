@@ -1,6 +1,6 @@
 pkg_name=prism
 pkg_version=0.0.1
-pkg_origin=automate
+pkg_origin=chef
 pkg_license=('Apache-2.0')
 pkg_upstream_url=https://github.com/chef/prism
 pkg_source=localsource.tar.gz
@@ -32,7 +32,8 @@ do_unpack() {
 
 do_build() {
   mkdir -p "${pkg_name}"
-  cp -r "${PLAN_CONTEXT}/../app/*" "${pkg_name}"
+
+  cp -r "${PLAN_CONTEXT}/../app/"* "${pkg_name}"
   export CPPFLAGS="${CPPFLAGS} ${CFLAGS}"
 
   local _bundler_dir=$(pkg_path_for bundler)
