@@ -32,7 +32,8 @@ do_unpack() {
 
 do_build() {
   mkdir -p "${pkg_name}"
-  cp -r "${PLAN_CONTEXT}/../app/*" "${pkg_name}"
+
+  cp -r "${PLAN_CONTEXT}/../app/"* "${pkg_name}"
   export CPPFLAGS="${CPPFLAGS} ${CFLAGS}"
 
   local _bundler_dir=$(pkg_path_for bundler)
