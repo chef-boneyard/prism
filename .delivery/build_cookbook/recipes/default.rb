@@ -22,8 +22,17 @@ package 'docker-engine'
 # connect to the Docker daemon
 execute "usermod -aG docker #{node['delivery_builder']['build_user']}"
 
-execute "docker login -u=\'#{delivery_secrets['docker']['user']}\' -p=\'#{delivery_secrets['docker']['password']}\'"
-
+execute 'add docker auto creds' do
+  command lazy { <<-EOH
+docker login -u="#{delivery_secrets['docker']['user']}" -p="#{delivery_secrets['docker']['password']}"
+  EOH
+}
+  cwd node['delivery_builder']['repo']
+  environment(
+    'HOME' => node['delivery']['workspace_path']
+  )
+  live_stream true
+end
 #########################################################################
 # Ruby
 #########################################################################
