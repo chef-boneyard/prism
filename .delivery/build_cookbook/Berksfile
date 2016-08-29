@@ -5,7 +5,8 @@ metadata
 group :delivery do
   cookbook 'delivery-truck'
   cookbook 'delivery-sugar', git: 'https://github.com/chef-cookbooks/delivery-sugar.git'
-  cookbook 'habitat-build',  git: 'https://github.com/chef-cookbooks/habitat-build.git'
+  cookbook 'habitat-build',  git: 'https://github.com/elliott-davis/habitat-build.git'
+  # cookbook 'habitat-build',  git: 'https://github.com/chef-cookbooks/habitat-build.git'
   cookbook 'delivery_build', git: 'https://github.com/chef-cookbooks/delivery_build'
   cookbook 'delivery-base', git: 'https://github.com/chef-cookbooks/delivery-base'
   cookbook 'test', path: './test/fixtures/cookbooks/test'
