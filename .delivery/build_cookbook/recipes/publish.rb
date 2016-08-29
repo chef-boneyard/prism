@@ -28,7 +28,7 @@ end
 
 execute 'push-package-router-container' do
   command(lazy { <<-EOH
-docker push chef:#{prism_build_version}
+docker push chef/prism:#{prism_build_version}
   EOH
   })
   cwd node['delivery_builder']['repo']
