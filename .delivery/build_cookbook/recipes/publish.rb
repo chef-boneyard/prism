@@ -28,7 +28,7 @@ end
 
 execute 'push-package-router-container' do
   command(lazy { <<-EOH
-docker tag chef/prism:#{prism_habitat_build_version} chef/prism/#{prism_build_version}
+docker tag chef/prism:#{prism_build_version} chef/prism/#{prism_build_version}
 docker push chef:#{prism_build_version}
   EOH
   })
