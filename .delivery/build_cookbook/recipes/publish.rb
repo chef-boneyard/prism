@@ -37,3 +37,9 @@ docker push chef/prism:#{prism_build_version}
   )
   live_stream true
 end
+
+###########################################################################
+# Push to github
+###########################################################################
+
+include_recipe 'delivery-truck::publish'
