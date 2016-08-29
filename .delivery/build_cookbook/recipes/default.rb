@@ -12,13 +12,17 @@ include_recipe 'habitat-build::default'
 #########################################################################
 # Docker
 #########################################################################
+delivery_secrets = get_project_secrets
+
 include_recipe 'chef-apt-docker::default'
 
-package "docker-engine"
+package 'docker-engine'
 
 # Ensure the `dbuild` user is part of the `docker` group so they can
 # connect to the Docker daemon
 execute "usermod -aG docker #{node['delivery_builder']['build_user']}"
+
+execute "docker login -u=\'#{delivery_secrets['docker']['user']}\' -p=\'#{delivery_secrets['docker']['password']}\'"
 
 #########################################################################
 # Ruby
