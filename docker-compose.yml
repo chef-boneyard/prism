@@ -1,0 +1,23 @@
+version: "2"
+services:
+  prism:
+    image: chef/prism
+    links:
+      - mock_api
+    volumes:
+      - ./config/user.toml:/hab/svc/prism/user.toml
+  rabbitmq:
+    image: rabbitmq:management
+    environment:
+      - RABBITMQ_DEFAULT_USER=insights
+      - RABBITMQ_DEFAULT_PASS=chefrocks
+      - RABBITMQ_DEFAULT_VHOST=/insights
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  mock_api:
+    build: ./mock_api
+    links:
+      - rabbitmq
+    environment:
+      - AMQP_HOST=rabbitmq

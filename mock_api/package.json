@@ -1,0 +1,34 @@
+{
+  "name": "Mock-API",
+  "version": "0.0.1",
+  "description": "Mock API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node_modules/.bin/gulp serve",
+    "postinstall": "node_modules/.bin/typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chef/prism.git"
+  },
+  "author": "Elliott Davis",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/chef/prism",
+  "dependencies": {
+    "amqplib": "^0.4.2",
+    "config": "^1.20.3",
+    "koa": "^2.0.0",
+    "koa-bodyparser": "^3.1.0",
+    "koa-router": "^7.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-jasmine": "^2.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-typescript": "^2.13.6",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.2"
+  }
+}
