@@ -37,7 +37,8 @@ class Habistone
         method: 'post',
         url: data_collector,
         payload: message.to_json,
-        headers: { 'x-data-collector-token' => data_collector_token , 'Content-Type' => 'application/json'}
+        headers: { 'x-data-collector-token' => data_collector_token, 'Content-Type' => 'application/json'},
+        verify_ssl: ssl_verify_mode
       )
     rescue RestClient::ExceptionWithResponse => e
       puts e.response
@@ -104,5 +105,11 @@ class Habistone
     elseif member['detached']
       return 'detached'
     end
+  end
+
+  private
+
+  def ssl_verify_mode
+    Habistone::Config.ssl_verification_enabled ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE
   end
 end

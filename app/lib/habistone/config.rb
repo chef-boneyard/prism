@@ -9,5 +9,6 @@ class Habistone
     default :supervisor_host, 'localhost'
     default :habitat_ring_id, SecureRandom.uuid
     default :habitat_ring_alias, 'default'
+    default :ssl_verification_enabled, true
   end
 end
