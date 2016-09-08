@@ -1,0 +1,2634 @@
+[bind]
+
+[cfg]
+data_collector_token = "93a49a4f2482c64126f7b6015e6b0f30284287ee4054ff8807fb63d9cbd1c506"
+data_collector_url = "http://localhost/data-collector/v0/"
+ssl_verification_enabled = true
+supervisor_host = "localhost"
+
+[hab]
+version = "0.0.0"
+
+[pkg]
+exposes = []
+ident = "kmacgugan/prism/0.0.1/20160908202401"
+name = "prism"
+origin = "kmacgugan"
+path = "/hab/pkgs/kmacgugan/prism/0.0.1/20160908202401"
+release = "20160908202401"
+svc_config_path = "/hab/svc/prism/config"
+svc_data_path = "/hab/svc/prism/data"
+svc_files_path = "/hab/svc/prism/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/prism"
+svc_static_path = "/hab/svc/prism/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/prism/var"
+version = "0.0.1"
+
+[[pkg.deps]]
+exposes = []
+ident = "core/bundler/1.11.2/20160729224128"
+name = "bundler"
+origin = "core"
+path = "/hab/pkgs/core/bundler/1.11.2/20160729224128"
+release = "20160729224128"
+svc_config_path = "/hab/svc/bundler/config"
+svc_data_path = "/hab/svc/bundler/data"
+svc_files_path = "/hab/svc/bundler/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/bundler"
+svc_static_path = "/hab/svc/bundler/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/bundler/var"
+version = "1.11.2"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/ruby/2.3.1/20160729223806"
+name = "ruby"
+origin = "core"
+path = "/hab/pkgs/core/ruby/2.3.1/20160729223806"
+release = "20160729223806"
+svc_config_path = "/hab/svc/ruby/config"
+svc_data_path = "/hab/svc/ruby/data"
+svc_files_path = "/hab/svc/ruby/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/ruby"
+svc_static_path = "/hab/svc/ruby/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/ruby/var"
+version = "2.3.1"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/ncurses/6.0/20160612075116"
+name = "ncurses"
+origin = "core"
+path = "/hab/pkgs/core/ncurses/6.0/20160612075116"
+release = "20160612075116"
+svc_config_path = "/hab/svc/ncurses/config"
+svc_data_path = "/hab/svc/ncurses/data"
+svc_files_path = "/hab/svc/ncurses/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/ncurses"
+svc_static_path = "/hab/svc/ncurses/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/ncurses/var"
+version = "6.0"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/gcc-libs/5.2.0/20160612075020"
+name = "gcc-libs"
+origin = "core"
+path = "/hab/pkgs/core/gcc-libs/5.2.0/20160612075020"
+release = "20160612075020"
+svc_config_path = "/hab/svc/gcc-libs/config"
+svc_data_path = "/hab/svc/gcc-libs/data"
+svc_files_path = "/hab/svc/gcc-libs/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/gcc-libs"
+svc_static_path = "/hab/svc/gcc-libs/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/gcc-libs/var"
+version = "5.2.0"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/zlib/1.2.8/20160612064520"
+name = "zlib"
+origin = "core"
+path = "/hab/pkgs/core/zlib/1.2.8/20160612064520"
+release = "20160612064520"
+svc_config_path = "/hab/svc/zlib/config"
+svc_data_path = "/hab/svc/zlib/data"
+svc_files_path = "/hab/svc/zlib/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/zlib"
+svc_static_path = "/hab/svc/zlib/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/zlib/var"
+version = "1.2.8"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/openssl/1.0.2h/20160729194249"
+name = "openssl"
+origin = "core"
+path = "/hab/pkgs/core/openssl/1.0.2h/20160729194249"
+release = "20160729194249"
+svc_config_path = "/hab/svc/openssl/config"
+svc_data_path = "/hab/svc/openssl/data"
+svc_files_path = "/hab/svc/openssl/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/openssl"
+svc_static_path = "/hab/svc/openssl/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/openssl/var"
+version = "1.0.2h"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/zlib/1.2.8/20160612064520"
+name = "zlib"
+origin = "core"
+path = "/hab/pkgs/core/zlib/1.2.8/20160612064520"
+release = "20160612064520"
+svc_config_path = "/hab/svc/zlib/config"
+svc_data_path = "/hab/svc/zlib/data"
+svc_files_path = "/hab/svc/zlib/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/zlib"
+svc_static_path = "/hab/svc/zlib/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/zlib/var"
+version = "1.2.8"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/cacerts/2016.04.20/20160612081125"
+name = "cacerts"
+origin = "core"
+path = "/hab/pkgs/core/cacerts/2016.04.20/20160612081125"
+release = "20160612081125"
+svc_config_path = "/hab/svc/cacerts/config"
+svc_data_path = "/hab/svc/cacerts/data"
+svc_files_path = "/hab/svc/cacerts/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/cacerts"
+svc_static_path = "/hab/svc/cacerts/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/cacerts/var"
+version = "2016.04.20"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/libyaml/0.1.6/20160729212425"
+name = "libyaml"
+origin = "core"
+path = "/hab/pkgs/core/libyaml/0.1.6/20160729212425"
+release = "20160729212425"
+svc_config_path = "/hab/svc/libyaml/config"
+svc_data_path = "/hab/svc/libyaml/data"
+svc_files_path = "/hab/svc/libyaml/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libyaml"
+svc_static_path = "/hab/svc/libyaml/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libyaml/var"
+version = "0.1.6"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/libffi/3.2.1/20160729212417"
+name = "libffi"
+origin = "core"
+path = "/hab/pkgs/core/libffi/3.2.1/20160729212417"
+release = "20160729212417"
+svc_config_path = "/hab/svc/libffi/config"
+svc_data_path = "/hab/svc/libffi/data"
+svc_files_path = "/hab/svc/libffi/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libffi"
+svc_static_path = "/hab/svc/libffi/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libffi/var"
+version = "3.2.1"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/libtool/2.4.6/20160729195649"
+name = "libtool"
+origin = "core"
+path = "/hab/pkgs/core/libtool/2.4.6/20160729195649"
+release = "20160729195649"
+svc_config_path = "/hab/svc/libtool/config"
+svc_data_path = "/hab/svc/libtool/data"
+svc_files_path = "/hab/svc/libtool/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libtool"
+svc_static_path = "/hab/svc/libtool/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libtool/var"
+version = "2.4.6"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/coreutils/8.25/20160729192409"
+name = "coreutils"
+origin = "core"
+path = "/hab/pkgs/core/coreutils/8.25/20160729192409"
+release = "20160729192409"
+svc_config_path = "/hab/svc/coreutils/config"
+svc_data_path = "/hab/svc/coreutils/data"
+svc_files_path = "/hab/svc/coreutils/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/coreutils"
+svc_static_path = "/hab/svc/coreutils/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/coreutils/var"
+version = "8.25"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/acl/2.2.52/20160612075215"
+name = "acl"
+origin = "core"
+path = "/hab/pkgs/core/acl/2.2.52/20160612075215"
+release = "20160612075215"
+svc_config_path = "/hab/svc/acl/config"
+svc_data_path = "/hab/svc/acl/data"
+svc_files_path = "/hab/svc/acl/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/acl"
+svc_static_path = "/hab/svc/acl/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/acl/var"
+version = "2.2.52"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/gmp/6.1.0/20160612064724"
+name = "gmp"
+origin = "core"
+path = "/hab/pkgs/core/gmp/6.1.0/20160612064724"
+release = "20160612064724"
+svc_config_path = "/hab/svc/gmp/config"
+svc_data_path = "/hab/svc/gmp/data"
+svc_files_path = "/hab/svc/gmp/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/gmp"
+svc_static_path = "/hab/svc/gmp/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/gmp/var"
+version = "6.1.0"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/libcap/2.24/20160612075226"
+name = "libcap"
+origin = "core"
+path = "/hab/pkgs/core/libcap/2.24/20160612075226"
+release = "20160612075226"
+svc_config_path = "/hab/svc/libcap/config"
+svc_data_path = "/hab/svc/libcap/data"
+svc_files_path = "/hab/svc/libcap/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libcap"
+svc_static_path = "/hab/svc/libcap/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libcap/var"
+version = "2.24"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/sed/4.2.2/20160612075228"
+name = "sed"
+origin = "core"
+path = "/hab/pkgs/core/sed/4.2.2/20160612075228"
+release = "20160612075228"
+svc_config_path = "/hab/svc/sed/config"
+svc_data_path = "/hab/svc/sed/data"
+svc_files_path = "/hab/svc/sed/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/sed"
+svc_static_path = "/hab/svc/sed/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/sed/var"
+version = "4.2.2"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/acl/2.2.52/20160612075215"
+name = "acl"
+origin = "core"
+path = "/hab/pkgs/core/acl/2.2.52/20160612075215"
+release = "20160612075215"
+svc_config_path = "/hab/svc/acl/config"
+svc_data_path = "/hab/svc/acl/data"
+svc_files_path = "/hab/svc/acl/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/acl"
+svc_static_path = "/hab/svc/acl/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/acl/var"
+version = "2.2.52"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/grep/2.22/20160729192643"
+name = "grep"
+origin = "core"
+path = "/hab/pkgs/core/grep/2.22/20160729192643"
+release = "20160729192643"
+svc_config_path = "/hab/svc/grep/config"
+svc_data_path = "/hab/svc/grep/data"
+svc_files_path = "/hab/svc/grep/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/grep"
+svc_static_path = "/hab/svc/grep/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/grep/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/pcre/8.38/20160729192620"
+name = "pcre"
+origin = "core"
+path = "/hab/pkgs/core/pcre/8.38/20160729192620"
+release = "20160729192620"
+svc_config_path = "/hab/svc/pcre/config"
+svc_data_path = "/hab/svc/pcre/data"
+svc_files_path = "/hab/svc/pcre/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/pcre"
+svc_static_path = "/hab/svc/pcre/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/pcre/var"
+version = "8.38"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/gcc-libs/5.2.0/20160612075020"
+name = "gcc-libs"
+origin = "core"
+path = "/hab/pkgs/core/gcc-libs/5.2.0/20160612075020"
+release = "20160612075020"
+svc_config_path = "/hab/svc/gcc-libs/config"
+svc_data_path = "/hab/svc/gcc-libs/data"
+svc_files_path = "/hab/svc/gcc-libs/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/gcc-libs"
+svc_static_path = "/hab/svc/gcc-libs/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/gcc-libs/var"
+version = "5.2.0"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps]]
+exposes = []
+ident = "core/ruby/2.3.1/20160729223806"
+name = "ruby"
+origin = "core"
+path = "/hab/pkgs/core/ruby/2.3.1/20160729223806"
+release = "20160729223806"
+svc_config_path = "/hab/svc/ruby/config"
+svc_data_path = "/hab/svc/ruby/data"
+svc_files_path = "/hab/svc/ruby/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/ruby"
+svc_static_path = "/hab/svc/ruby/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/ruby/var"
+version = "2.3.1"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/ncurses/6.0/20160612075116"
+name = "ncurses"
+origin = "core"
+path = "/hab/pkgs/core/ncurses/6.0/20160612075116"
+release = "20160612075116"
+svc_config_path = "/hab/svc/ncurses/config"
+svc_data_path = "/hab/svc/ncurses/data"
+svc_files_path = "/hab/svc/ncurses/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/ncurses"
+svc_static_path = "/hab/svc/ncurses/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/ncurses/var"
+version = "6.0"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/gcc-libs/5.2.0/20160612075020"
+name = "gcc-libs"
+origin = "core"
+path = "/hab/pkgs/core/gcc-libs/5.2.0/20160612075020"
+release = "20160612075020"
+svc_config_path = "/hab/svc/gcc-libs/config"
+svc_data_path = "/hab/svc/gcc-libs/data"
+svc_files_path = "/hab/svc/gcc-libs/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/gcc-libs"
+svc_static_path = "/hab/svc/gcc-libs/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/gcc-libs/var"
+version = "5.2.0"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/zlib/1.2.8/20160612064520"
+name = "zlib"
+origin = "core"
+path = "/hab/pkgs/core/zlib/1.2.8/20160612064520"
+release = "20160612064520"
+svc_config_path = "/hab/svc/zlib/config"
+svc_data_path = "/hab/svc/zlib/data"
+svc_files_path = "/hab/svc/zlib/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/zlib"
+svc_static_path = "/hab/svc/zlib/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/zlib/var"
+version = "1.2.8"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/openssl/1.0.2h/20160729194249"
+name = "openssl"
+origin = "core"
+path = "/hab/pkgs/core/openssl/1.0.2h/20160729194249"
+release = "20160729194249"
+svc_config_path = "/hab/svc/openssl/config"
+svc_data_path = "/hab/svc/openssl/data"
+svc_files_path = "/hab/svc/openssl/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/openssl"
+svc_static_path = "/hab/svc/openssl/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/openssl/var"
+version = "1.0.2h"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/zlib/1.2.8/20160612064520"
+name = "zlib"
+origin = "core"
+path = "/hab/pkgs/core/zlib/1.2.8/20160612064520"
+release = "20160612064520"
+svc_config_path = "/hab/svc/zlib/config"
+svc_data_path = "/hab/svc/zlib/data"
+svc_files_path = "/hab/svc/zlib/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/zlib"
+svc_static_path = "/hab/svc/zlib/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/zlib/var"
+version = "1.2.8"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/cacerts/2016.04.20/20160612081125"
+name = "cacerts"
+origin = "core"
+path = "/hab/pkgs/core/cacerts/2016.04.20/20160612081125"
+release = "20160612081125"
+svc_config_path = "/hab/svc/cacerts/config"
+svc_data_path = "/hab/svc/cacerts/data"
+svc_files_path = "/hab/svc/cacerts/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/cacerts"
+svc_static_path = "/hab/svc/cacerts/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/cacerts/var"
+version = "2016.04.20"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/libyaml/0.1.6/20160729212425"
+name = "libyaml"
+origin = "core"
+path = "/hab/pkgs/core/libyaml/0.1.6/20160729212425"
+release = "20160729212425"
+svc_config_path = "/hab/svc/libyaml/config"
+svc_data_path = "/hab/svc/libyaml/data"
+svc_files_path = "/hab/svc/libyaml/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libyaml"
+svc_static_path = "/hab/svc/libyaml/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libyaml/var"
+version = "0.1.6"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps]]
+exposes = []
+ident = "core/libffi/3.2.1/20160729212417"
+name = "libffi"
+origin = "core"
+path = "/hab/pkgs/core/libffi/3.2.1/20160729212417"
+release = "20160729212417"
+svc_config_path = "/hab/svc/libffi/config"
+svc_data_path = "/hab/svc/libffi/data"
+svc_files_path = "/hab/svc/libffi/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libffi"
+svc_static_path = "/hab/svc/libffi/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libffi/var"
+version = "3.2.1"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps]]
+exposes = []
+ident = "core/libtool/2.4.6/20160729195649"
+name = "libtool"
+origin = "core"
+path = "/hab/pkgs/core/libtool/2.4.6/20160729195649"
+release = "20160729195649"
+svc_config_path = "/hab/svc/libtool/config"
+svc_data_path = "/hab/svc/libtool/data"
+svc_files_path = "/hab/svc/libtool/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libtool"
+svc_static_path = "/hab/svc/libtool/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libtool/var"
+version = "2.4.6"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/coreutils/8.25/20160729192409"
+name = "coreutils"
+origin = "core"
+path = "/hab/pkgs/core/coreutils/8.25/20160729192409"
+release = "20160729192409"
+svc_config_path = "/hab/svc/coreutils/config"
+svc_data_path = "/hab/svc/coreutils/data"
+svc_files_path = "/hab/svc/coreutils/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/coreutils"
+svc_static_path = "/hab/svc/coreutils/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/coreutils/var"
+version = "8.25"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/acl/2.2.52/20160612075215"
+name = "acl"
+origin = "core"
+path = "/hab/pkgs/core/acl/2.2.52/20160612075215"
+release = "20160612075215"
+svc_config_path = "/hab/svc/acl/config"
+svc_data_path = "/hab/svc/acl/data"
+svc_files_path = "/hab/svc/acl/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/acl"
+svc_static_path = "/hab/svc/acl/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/acl/var"
+version = "2.2.52"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/gmp/6.1.0/20160612064724"
+name = "gmp"
+origin = "core"
+path = "/hab/pkgs/core/gmp/6.1.0/20160612064724"
+release = "20160612064724"
+svc_config_path = "/hab/svc/gmp/config"
+svc_data_path = "/hab/svc/gmp/data"
+svc_files_path = "/hab/svc/gmp/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/gmp"
+svc_static_path = "/hab/svc/gmp/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/gmp/var"
+version = "6.1.0"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/libcap/2.24/20160612075226"
+name = "libcap"
+origin = "core"
+path = "/hab/pkgs/core/libcap/2.24/20160612075226"
+release = "20160612075226"
+svc_config_path = "/hab/svc/libcap/config"
+svc_data_path = "/hab/svc/libcap/data"
+svc_files_path = "/hab/svc/libcap/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/libcap"
+svc_static_path = "/hab/svc/libcap/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/libcap/var"
+version = "2.24"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/sed/4.2.2/20160612075228"
+name = "sed"
+origin = "core"
+path = "/hab/pkgs/core/sed/4.2.2/20160612075228"
+release = "20160612075228"
+svc_config_path = "/hab/svc/sed/config"
+svc_data_path = "/hab/svc/sed/data"
+svc_files_path = "/hab/svc/sed/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/sed"
+svc_static_path = "/hab/svc/sed/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/sed/var"
+version = "4.2.2"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/acl/2.2.52/20160612075215"
+name = "acl"
+origin = "core"
+path = "/hab/pkgs/core/acl/2.2.52/20160612075215"
+release = "20160612075215"
+svc_config_path = "/hab/svc/acl/config"
+svc_data_path = "/hab/svc/acl/data"
+svc_files_path = "/hab/svc/acl/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/acl"
+svc_static_path = "/hab/svc/acl/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/acl/var"
+version = "2.2.52"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/attr/2.4.47/20160612075207"
+name = "attr"
+origin = "core"
+path = "/hab/pkgs/core/attr/2.4.47/20160612075207"
+release = "20160612075207"
+svc_config_path = "/hab/svc/attr/config"
+svc_data_path = "/hab/svc/attr/data"
+svc_files_path = "/hab/svc/attr/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/attr"
+svc_static_path = "/hab/svc/attr/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/attr/var"
+version = "2.4.47"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps]]
+exposes = []
+ident = "core/grep/2.22/20160729192643"
+name = "grep"
+origin = "core"
+path = "/hab/pkgs/core/grep/2.22/20160729192643"
+release = "20160729192643"
+svc_config_path = "/hab/svc/grep/config"
+svc_data_path = "/hab/svc/grep/data"
+svc_files_path = "/hab/svc/grep/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/grep"
+svc_static_path = "/hab/svc/grep/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/grep/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/pcre/8.38/20160729192620"
+name = "pcre"
+origin = "core"
+path = "/hab/pkgs/core/pcre/8.38/20160729192620"
+release = "20160729192620"
+svc_config_path = "/hab/svc/pcre/config"
+svc_data_path = "/hab/svc/pcre/data"
+svc_files_path = "/hab/svc/pcre/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/pcre"
+svc_static_path = "/hab/svc/pcre/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/pcre/var"
+version = "8.38"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[[pkg.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/gcc-libs/5.2.0/20160612075020"
+name = "gcc-libs"
+origin = "core"
+path = "/hab/pkgs/core/gcc-libs/5.2.0/20160612075020"
+release = "20160612075020"
+svc_config_path = "/hab/svc/gcc-libs/config"
+svc_data_path = "/hab/svc/gcc-libs/data"
+svc_files_path = "/hab/svc/gcc-libs/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/gcc-libs"
+svc_static_path = "/hab/svc/gcc-libs/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/gcc-libs/var"
+version = "5.2.0"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps]]
+exposes = []
+ident = "core/glibc/2.22/20160612063629"
+name = "glibc"
+origin = "core"
+path = "/hab/pkgs/core/glibc/2.22/20160612063629"
+release = "20160612063629"
+svc_config_path = "/hab/svc/glibc/config"
+svc_data_path = "/hab/svc/glibc/data"
+svc_files_path = "/hab/svc/glibc/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/glibc"
+svc_static_path = "/hab/svc/glibc/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/glibc/var"
+version = "2.22"
+
+[[pkg.deps.deps.deps.deps.deps.deps.deps.deps]]
+deps = []
+exposes = []
+ident = "core/linux-headers/4.3/20160612063537"
+name = "linux-headers"
+origin = "core"
+path = "/hab/pkgs/core/linux-headers/4.3/20160612063537"
+release = "20160612063537"
+svc_config_path = "/hab/svc/linux-headers/config"
+svc_data_path = "/hab/svc/linux-headers/data"
+svc_files_path = "/hab/svc/linux-headers/files"
+svc_group_default = "hab"
+svc_path = "/hab/svc/linux-headers"
+svc_static_path = "/hab/svc/linux-headers/static"
+svc_user_default = "hab"
+svc_var_path = "/hab/svc/linux-headers/var"
+version = "4.3"
+
+[svc]
+group = "default"
+ident = "prism.default"
+service = "prism"
+
+[[svc.all]]
+group = "default"
+ident = "prism.default"
+service = "prism"
+
+[svc.all.me]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.all.me.incarnation]
+counter = 0
+
+[svc.all.member_id]
+
+[svc.all.member_id.bedb7e94-da17-4b3f-814b-cf06ebffbd64]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.all.member_id.bedb7e94-da17-4b3f-814b-cf06ebffbd64.incarnation]
+counter = 0
+
+[[svc.all.members]]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.all.members.incarnation]
+counter = 0
+
+[svc.me]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.me.incarnation]
+counter = 0
+
+[svc.member_id]
+
+[svc.member_id.bedb7e94-da17-4b3f-814b-cf06ebffbd64]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.member_id.bedb7e94-da17-4b3f-814b-cf06ebffbd64.incarnation]
+counter = 0
+
+[[svc.members]]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.members.incarnation]
+counter = 0
+
+[svc.named]
+
+[svc.named.prism]
+
+[svc.named.prism.default]
+group = "default"
+ident = "prism.default"
+service = "prism"
+
+[svc.named.prism.default.me]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.named.prism.default.me.incarnation]
+counter = 0
+
+[svc.named.prism.default.member_id]
+
+[svc.named.prism.default.member_id.bedb7e94-da17-4b3f-814b-cf06ebffbd64]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.named.prism.default.member_id.bedb7e94-da17-4b3f-814b-cf06ebffbd64.incarnation]
+counter = 0
+
+[[svc.named.prism.default.members]]
+alive = true
+confirmed = false
+data_init = false
+detached = false
+exposes = []
+follower = false
+group = "default"
+hostname = "bafcc8e6cbec"
+id = "bedb7e94-da17-4b3f-814b-cf06ebffbd64"
+initialized = false
+ip = "172.17.0.2"
+keep_me = true
+leader = false
+member_id = "49a5b1df-b899-41bd-b515-950d1a9286aa"
+service = "prism"
+suitability = 0
+suspect = false
+
+[svc.named.prism.default.members.incarnation]
+counter = 0
+
+[sys]
+gossip_ip = "172.17.0.2"
+gossip_port = 9634
+hostname = "bafcc8e6cbec"
+ip = "172.17.0.2"
+sidecar_ip = "0.0.0.0"
+sidecar_port = 9631
