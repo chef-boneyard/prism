@@ -8,6 +8,6 @@ habistone = Habistone.new
 
 loop do
   t = Time.now
-  habistone.emit(habistone.refract(habistone.absorb))
+  habistone.run
   sleep(t + wavelength - Time.now)
 end

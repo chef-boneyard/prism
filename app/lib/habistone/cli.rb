@@ -19,17 +19,14 @@ class Habistone
 
     option :supervisor_host,
            :long => '--supervisor_host HOST',
-           :default => 'localhost',
            :description => 'Host that the supervisor is on, often localhost'
 
     option :habitat_ring_id,
            :long => '--habitat_ring_id UUID',
-           :default =>  SecureRandom.uuid,
            :description => 'The unique identifier of the habitat ring.'
 
     option :habitat_ring_alias,
            :long => '--habitat_ring_alias ALIAS',
-           :default => 'default',
            :description => 'The alias of the habitat ring.'
   end
 end
