@@ -161,6 +161,82 @@
                       "description": "Every time a member receives a Suspect or Confirmed message about their own entry in the MemberList, we update the Incarnation counter. Type of u64",
                       "type": "string"
                     }
+                  },
+                  "configuration": {
+                    "description": "Configuration file information for this member",
+                    "type": "object",
+                    "required": true,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "error": {
+                          "description": "Error information for configuration retrieval failure",
+                          "type": "object",
+                          "required": false,
+                          "properties": {
+                            "status": {
+                              "description": "HTTP status code",
+                              "type": "integer"
+                            },
+                            "message": {
+                              "description": "Error message details",
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "bind":{
+                          "description": "Service binding information",
+                          "type": "object"
+                        },
+                        "hab": {
+                          "description": "Configuration information about habitat",
+                          "type": "object"
+                        },
+                        "cfg": {
+                          "description": "package defined configuration values",
+                          "type": "object"
+                        },
+                        "deps": {
+                          "description": "List of package dependencies",
+                          "type": "array",
+                          "minItems": 1,
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "sys": {
+                          "description": "System configuration information for the supervisor",
+                          "type": "object",
+                          "properties": {
+                            "gossip_ip": {
+                              "description": "IP address for gossip messages",
+                              "type": "string"
+                            },
+                            "gossip_port":{
+                              "description": "Port for gossip messages",
+                              "type": "string"
+                            },
+                            "hostname":{
+                              "description": "hostname for this supervisor",
+                              "type": "string"
+                            },
+                            "ip":{
+                              "description": "IP address for this supervisor",
+                              "type": "string"
+                            },
+                            "sidecar_ip":{
+                              "description": "IP address for sidecar endpoints",
+                              "type": "string"
+                            },
+                            "sidecar_port":{
+                              "description": "Port for sidecar endpoints",
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }

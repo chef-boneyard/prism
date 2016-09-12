@@ -32,30 +32,9 @@
             "counter": 0
           },
           "configuration": {
-            "bind": {
-
-            },
-            "hab": {
-              "version": "0.0.0"
-            },
-            "cfg": {
-              "data_collector_token": "93a49a4f2482c64126f7b6015e6b0f30284287ee4054ff8807fb63d9cbd1c506",
-              "data_collector_url": "http://localhost/data-collector/v0/",
-              "ssl_verification_enabled": true,
-              "supervisor_host": "localhost"
-            },
-            "deps": [
-                "kmacgugan/prism/0.0.1/20160908202401",
-                "core/bundler/1.11.2/20160729224128",
-                "core/glibc/2.22/20160612063629"
-            ],
-            "sys": {
-                "gossip_ip": "172.17.0.2",
-                "gossip_port": 9634,
-                "hostname": "bafcc8e6cbec",
-                "ip": "172.17.0.2",
-                "sidecar_ip": "0.0.0.0",
-                "sidecar_port": 9631
+            "error": {
+              "status": 500,
+              "message": "Failed to open TCP connection to 234.23.2.3:9631 (Network is unreachable - connect(2) for '234.23.2.3' port 9631)"
             }
           }
         }
