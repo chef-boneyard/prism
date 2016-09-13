@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+  "required": true,
+  "properties": {
+    "bind":{
+      "description": "Service binding information",
+      "required": true,
+      "type": "object"
+    },
+    "hab": {
+      "description": "Configuration information about habitat",
+      "required": true,
+      "type": "object"
+    },
+    "cfg": {
+      "description": "package defined configuration values",
+      "required": true,
+      "type": "object"
+    },
+    "pkg": {
+      "description": "identity of the habitat package under this supervisor's control",
+      "type": "string"
+    },
+    "deps": {
+      "description": "List of package dependencies",
+      "required": true,
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "sys": {
+      "description": "System configuration information for the supervisor",
+      "type": "object",
+      "required": true,
+      "properties": {
+        "gossip_ip": {
+          "required": true,
+          "description": "IP address for gossip messages",
+          "type": "string"
+        },
+        "gossip_port":{
+          "required": true,
+          "description": "Port for gossip messages",
+          "type": "integer"
+        },
+        "hostname":{
+          "required": true,
+          "description": "hostname for this supervisor",
+          "type": "string"
+        },
+        "ip":{
+          "required": true,
+          "description": "IP address for this supervisor",
+          "type": "string"
+        },
+        "sidecar_ip":{
+          "required": true,
+          "description": "IP address for sidecar endpoints",
+          "type": "string"
+        },
+        "sidecar_port":{
+          "required": true,
+          "description": "Port for sidecar endpoints",
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
