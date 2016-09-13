@@ -9,7 +9,7 @@ class Habistone
     def get_config
       begin
         config_toml = RestClient.get "http://#{supervisor_ip}:9631/config"
-        refract_config_toml(config_toml)
+        refract(config_toml)
       rescue RestClient::ExceptionWithResponse => e
         {
           error: {
@@ -27,6 +27,11 @@ class Habistone
     end
 
     def refract(config_toml)
+      # TODO: replace this with actual refracted config
+      {
+        service_config: 'some stuff here',
+        dependencies: ['a', 'b']
+      }
     end
   end
 end

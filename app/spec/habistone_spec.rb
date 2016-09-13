@@ -9,20 +9,21 @@ describe Habistone do
 
   describe 'JSON Validation' do
     let(:hab_census) { File.read('spec/data/census.json') }
-    let(:member_ip)  {"172.17.0.2"}
+    let(:sup_config) { File.read('spec/data/config.toml') }
 
     it 'Transforms to json matching the schema' do
-      #allow(RestClient).to receive(:get).with("http://172.17.0.2:9631/config").and_re
-      member_config = double('member_config')
-      expect(Habistone::MemberConfig).to receive(:new).with(member_ip).and_return(member_config)
-      expect(member_config).to receive(:get_config).and_return("configuration")
+      expect(RestClient).to receive(:get).with("http://172.17.0.2:9631/census").and_return(hab_census)
+      expect(RestClient).to receive(:get).with("http://172.17.0.2:9631/config").and_return(sup_config)
 
-      vis_census = habistone.refract(hab_census)
-      expect(vis_census).to match_response_schema('ring_census')
+      Habistone::Config.supervisor_host = '172.17.0.2'
+      absorbed_data = habistone.absorb
+      refracted_data = habistone.refract(absorbed_data)
+
+      expect(refracted_data.to_json).to match_response_schema('ring_census')
     end
   end
 
-  describe 'Setting SSL verification' do
+  describe '#ssl_verify_mode' do
     it 'Disables SSL verification when the config is set to false' do
       Habistone::Config.ssl_verification_enabled = false
       expect(habistone.send(:ssl_verify_mode)).to eq(OpenSSL::SSL::VERIFY_NONE)

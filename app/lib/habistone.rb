@@ -8,14 +8,11 @@ class Habistone
   def initialize
     cli = Habistone::Cli.new
     cli.parse_options
-    if cli.config[:config_file]
-      puts "Loading from config file #{cli.config[:config_file]}"
-      Habistone::Config.from_file(cli.config[:config_file])
-    end
-
-    puts "Applying any configuration parameters provided on the CLI..."
+    Habistone::Config.from_file(cli.config[:config_file]) if cli.config[:config_file]
     Habistone::Config.merge!(cli.config)
+  end
 
+  def print_configuration
     puts "Data collector url: #{Habistone::Config.data_collector_url}"
     puts "Habitat supervisor host: #{Habistone::Config.supervisor_host}"
     puts "Habitat ring id: #{habitat_ring_id}"

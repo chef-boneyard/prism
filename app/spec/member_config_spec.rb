@@ -11,7 +11,7 @@ describe Habistone do
     context "when the HTTP call is successful" do
       it "makes the HTTP call, refracts the data, and returns it" do
         expect(RestClient).to receive(:get).with("http://1.2.3.4:9631/config").and_return("supervisor_config")
-        expect(member_config).to receive(:refract_config_toml).with("supervisor_config").and_return("refracted_config")
+        expect(member_config).to receive(:refract).with("supervisor_config").and_return("refracted_config")
         expect(member_config.get_config).to eq("refracted_config")
       end
     end
