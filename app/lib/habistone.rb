@@ -2,6 +2,7 @@ require 'rest-client'
 require 'json'
 require 'habistone/cli'
 require 'habistone/config'
+require 'habistone/member_config'
 
 class Habistone
   def initialize
@@ -88,9 +89,12 @@ class Habistone
   def refract_members(members)
     vis_members = Hash.new { |hash, key| hash[key] = Hash.new(&hash.default_proc) }
     members.each do |census_id, member|
+      member_config = Habistone::MemberConfig.new(member['ip'])
       id = member['member_id']
       vis_members[id]['census_id'] = census_id
       vis_members[id]['member_id'] = member['member_id']
+      vis_members[id]['ip'] = member['ip']
+      vis_members[id]['leader'] = member['leader']
       vis_members[id]['hostname'] = member['hostname']
       vis_members[id]['status'] = diffract_status(member)
       vis_members[id]['vote'] = member['vote']
@@ -101,6 +105,7 @@ class Habistone
       vis_members[id]['port'] = member['port']
       vis_members[id]['exposes'] = member['exposes']
       vis_members[id]['incarnation'] = member['incarnation']
+      vis_members[id]['configuration'] = member_config.get_config
     end
 
     vis_members

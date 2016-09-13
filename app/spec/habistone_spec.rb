@@ -7,10 +7,16 @@ require 'openssl'
 describe Habistone do
   let(:habistone) { Habistone.new }
 
-  describe 'Transforming census data' do
+  describe 'JSON Validation' do
     let(:hab_census) { File.read('spec/data/census.json') }
+    let(:member_ip)  {"172.17.0.2"}
 
     it 'Transforms to json matching the schema' do
+      #allow(RestClient).to receive(:get).with("http://172.17.0.2:9631/config").and_re
+      member_config = double('member_config')
+      expect(Habistone::MemberConfig).to receive(:new).with(member_ip).and_return(member_config)
+      expect(member_config).to receive(:get_config).and_return("configuration")
+
       vis_census = habistone.refract(hab_census)
       expect(vis_census).to match_response_schema('ring_census')
     end
