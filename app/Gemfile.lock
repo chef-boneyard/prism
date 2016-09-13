@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.3.8)
+    blankslate (2.1.2.4)
     diff-lcs (1.2.5)
     domain_name (0.5.20160615)
       unf (>= 0.0.5, < 1.0.0)
@@ -16,6 +17,8 @@ GEM
     mixlib-cli (1.7.0)
     mixlib-config (2.2.1)
     netrc (0.11.0)
+    parslet (1.5.0)
+      blankslate (~> 2.0)
     rest-client (2.0.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -33,6 +36,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    toml (0.1.2)
+      parslet (~> 1.5.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
@@ -47,6 +52,7 @@ DEPENDENCIES
   mixlib-config
   rest-client
   rspec
+  toml
 
 BUNDLED WITH
    1.12.5

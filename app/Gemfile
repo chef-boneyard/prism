@@ -5,6 +5,7 @@ gem 'json'
 gem 'rest-client'
 gem 'mixlib-cli'
 gem 'mixlib-config'
+gem 'toml'
 
 group :test do
   gem 'json-schema'

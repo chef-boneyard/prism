@@ -39,7 +39,7 @@ describe Habistone do
 
     it 'Transforms to json matching the schema' do
       config_json = member_config.refract(config_toml)
-      expect(config_json).to match_response_schema('ring_config_schema')
+      expect(config_json.to_json).to match_response_schema('test_config_schema')
     end
   end
 end
