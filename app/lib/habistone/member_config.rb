@@ -36,21 +36,21 @@ class Habistone
         cfg: parsed_toml['cfg'],
         #pkg: project_deps(parsed_toml['pkg'])
         #TODO base package. do separately? can there only be one?
-        deps: project_deps(parsed_toml['pkg']['deps'])
+        deps: project_deps(parsed_toml['pkg']['deps']),
+        sys: parsed_toml['sys']
       }
     end
 
     #Flatten deps tree into a package list
     def project_deps(deps_tree)
-      deps_list = Array.new
+      deps_list = Set.new
       project_deps_onto(deps_list, deps_tree)
-      deps_list
+      deps_list.to_a
     end
 
     def project_deps_onto(deps_list, deps_tree)
       deps_tree.each do |dep|
-        #TODO better way to make a Set?
-        deps_list.push(dep['ident']) unless deps_list.include?(dep['ident'])
+        deps_list.add(dep['ident'])
         if dep['deps'].any?
           project_deps_onto(deps_list, dep['deps'])
         end
