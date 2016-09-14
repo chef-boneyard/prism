@@ -10,7 +10,7 @@ class Habistone
 
     def get_config
       begin
-        config_toml = RestClient.get "http://#{supervisor_ip}:9631/config"
+        config_toml = RestClient.get("http://#{supervisor_ip}:9631/config").body
         refract(config_toml)
       rescue RestClient::ExceptionWithResponse => e
         {

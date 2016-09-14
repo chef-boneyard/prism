@@ -38,7 +38,7 @@ class Habistone
 
   def absorb
     supervisor_host = Habistone::Config.supervisor_host
-    handle_http_exceptions_for { RestClient.get "http://#{supervisor_host}:9631/census" }
+    handle_http_exceptions_for { RestClient.get("http://#{supervisor_host}:9631/census").body }
   end
 
   def emit(message)
@@ -127,7 +127,7 @@ class Habistone
   def handle_http_exceptions_for(&block)
     yield
   rescue RestClient::ExceptionWithResponse => e
-    $stderr.puts "Error making HTTP request: #{e.class} - #{e.response}"
+    $stderr.puts "Error making HTTP request: #{e.class} - #{e.response.body}"
     raise
   rescue => e
     $stderr.puts "Error making HTTP request: #{e.class} - #{e.message}"

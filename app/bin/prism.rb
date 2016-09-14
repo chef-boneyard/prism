@@ -1,5 +1,7 @@
-require 'rubygems'
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
+require 'rubygems'
+require 'bundler/setup'
 require 'habistone'
 
 def sleep_interval(start_time, end_time, wavelength)
@@ -9,6 +11,7 @@ end
 
 wavelength = 30
 $stdout.sync = true
+$stderr.sync = true
 habistone = Habistone.new
 habistone.print_configuration
 
