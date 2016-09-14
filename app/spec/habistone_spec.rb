@@ -12,8 +12,10 @@ describe Habistone do
     let(:sup_config) { File.read('spec/data/config.toml') }
 
     it 'Transforms to json matching the schema' do
-      expect(RestClient).to receive(:get).with("http://172.17.0.2:9631/census").and_return(hab_census)
-      expect(RestClient).to receive(:get).with("http://172.17.0.2:9631/config").and_return(sup_config)
+      census_response = double('census_response', body: hab_census)
+      config_response = double('config_response', body: sup_config)
+      expect(RestClient).to receive(:get).with("http://172.17.0.2:9631/census").and_return(census_response)
+      expect(RestClient).to receive(:get).with("http://172.17.0.2:9631/config").and_return(config_response)
 
       Habistone::Config.supervisor_host = '172.17.0.2'
       absorbed_data = habistone.absorb
