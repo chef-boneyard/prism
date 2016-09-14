@@ -1,8 +1,8 @@
-require 'rest-client'
-require 'json'
-require 'habistone/cli'
-require 'habistone/config'
-require 'habistone/member_config'
+require "rest-client"
+require "json"
+require "habistone/cli"
+require "habistone/config"
+require "habistone/member_config"
 
 class Habistone
   def initialize
@@ -46,10 +46,10 @@ class Habistone
     data_collector_token = Habistone::Config.data_collector_token
     handle_http_exceptions_for do
       RestClient::Request.execute(
-        method: 'post',
+        method: "post",
         url: data_collector,
         payload: message.to_json,
-        headers: { 'x-data-collector-token' => data_collector_token, 'Content-Type' => 'application/json'},
+        headers: { "x-data-collector-token" => data_collector_token, "Content-Type" => "application/json" },
         verify_ssl: ssl_verify_mode
       )
     end
@@ -57,28 +57,28 @@ class Habistone
 
   def refract(json)
     ring_census = JSON.parse(json)
-    censuses = ring_census['census_list']['censuses']
+    censuses = ring_census["census_list"]["censuses"]
     service_groups = refract_service_groups(censuses)
     {
       ring_id: habitat_ring_id, #TODO: Get ring id from encyrption when encryption is on
       ring_alias: habitat_ring_alias,
-      last_update: Time.now.strftime('%Y-%m-%dT%H:%M:%SZ'),
-      prism_ip_address: ring_census['me']['ip'],
-      service_groups: service_groups
+      last_update: Time.now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+      prism_ip_address: ring_census["me"]["ip"],
+      service_groups: service_groups,
     }
   end
 
   def refract_service_groups(censuses)
     censuses.map do |census, service_group|
       service_group_name = census
-      members = refract_members(service_group['population'])
+      members = refract_members(service_group["population"])
       {
         name: service_group_name,
-        in_event: service_group['in_event'],
-        service: service_group['service'],
-        group: service_group['group'],
-        organization: service_group['organization'],
-        members: members
+        in_event: service_group["in_event"],
+        service: service_group["service"],
+        group: service_group["group"],
+        organization: service_group["organization"],
+        members: members,
       }
     end
   end
@@ -86,39 +86,39 @@ class Habistone
   def refract_members(members)
     vis_members = Hash.new { |hash, key| hash[key] = Hash.new(&hash.default_proc) }
     members.each do |census_id, member|
-      member_config = Habistone::MemberConfig.new(member['ip'])
-      id = member['member_id']
-      vis_members[id]['census_id'] = census_id
-      vis_members[id]['member_id'] = member['member_id']
-      vis_members[id]['ip'] = member['ip']
-      vis_members[id]['leader'] = member['leader']
-      vis_members[id]['hostname'] = member['hostname']
-      vis_members[id]['status'] = diffract_status(member)
-      vis_members[id]['vote'] = member['vote']
-      vis_members[id]['election'] = member['election']
-      vis_members[id]['needs_write'] = member['needs_write']
-      vis_members[id]['initialized'] = member['initialized']
-      vis_members[id]['suitability'] = member['suitability']
-      vis_members[id]['port'] = member['port']
-      vis_members[id]['exposes'] = member['exposes']
-      vis_members[id]['incarnation'] = member['incarnation']
-      vis_members[id]['configuration'] = member_config.get_config
+      member_config = Habistone::MemberConfig.new(member["ip"])
+      id = member["member_id"]
+      vis_members[id]["census_id"] = census_id
+      vis_members[id]["member_id"] = member["member_id"]
+      vis_members[id]["ip"] = member["ip"]
+      vis_members[id]["leader"] = member["leader"]
+      vis_members[id]["hostname"] = member["hostname"]
+      vis_members[id]["status"] = diffract_status(member)
+      vis_members[id]["vote"] = member["vote"]
+      vis_members[id]["election"] = member["election"]
+      vis_members[id]["needs_write"] = member["needs_write"]
+      vis_members[id]["initialized"] = member["initialized"]
+      vis_members[id]["suitability"] = member["suitability"]
+      vis_members[id]["port"] = member["port"]
+      vis_members[id]["exposes"] = member["exposes"]
+      vis_members[id]["incarnation"] = member["incarnation"]
+      vis_members[id]["configuration"] = member_config.get_config
     end
 
     vis_members
   end
 
   def diffract_status(member)
-    if member['alive']
-      'alive'
-    elsif member['suspect']
-      'suspect'
-    elsif member['confirmed']
-      'confirmed'
-    elsif member['detached']
-      'detached'
+    if member["alive"]
+      "alive"
+    elsif member["suspect"]
+      "suspect"
+    elsif member["confirmed"]
+      "confirmed"
+    elsif member["detached"]
+      "detached"
     else
-      'unknown'
+      "unknown"
     end
   end
 

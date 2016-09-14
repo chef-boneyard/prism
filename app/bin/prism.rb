@@ -1,8 +1,8 @@
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 
-require 'rubygems'
-require 'bundler/setup'
-require 'habistone'
+require "rubygems"
+require "bundler/setup"
+require "habistone"
 
 def sleep_interval(start_time, end_time, wavelength)
   proposed_sleep = start_time + wavelength - end_time

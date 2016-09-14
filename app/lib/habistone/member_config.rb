@@ -1,4 +1,4 @@
-require 'toml'
+require "toml"
 
 class Habistone
   class MemberConfig
@@ -16,14 +16,14 @@ class Habistone
         {
           error: {
             status: e.http_code,
-            message: e.response.body
-          }
+            message: e.response.body,
+          },
         }
       rescue => e
         {
           error: {
-            message: e.message
-          }
+            message: e.message,
+          },
         }
       end
     end
@@ -31,12 +31,12 @@ class Habistone
     def refract(config_toml)
       parsed_toml = TOML::Parser.new(config_toml).parsed
       {
-        bind: parsed_toml['bind'],
-        hab: parsed_toml['hab'],
-        cfg: parsed_toml['cfg'],
-        pkg: parsed_toml['pkg']['ident'],
-        deps: project_deps(parsed_toml['pkg']['deps']),
-        sys: parsed_toml['sys']
+        bind: parsed_toml["bind"],
+        hab: parsed_toml["hab"],
+        cfg: parsed_toml["cfg"],
+        pkg: parsed_toml["pkg"]["ident"],
+        deps: project_deps(parsed_toml["pkg"]["deps"]),
+        sys: parsed_toml["sys"],
       }
     end
 
@@ -49,8 +49,8 @@ class Habistone
 
     def project_deps_onto(deps_list, deps_tree)
       deps_tree.each do |dep|
-        deps_list.add(dep['ident'])
-        project_deps_onto(deps_list, dep['deps']) unless dep['deps'].nil? || dep['deps'].empty?
+        deps_list.add(dep["ident"])
+        project_deps_onto(deps_list, dep["deps"]) unless dep["deps"].nil? || dep["deps"].empty?
       end
     end
   end
