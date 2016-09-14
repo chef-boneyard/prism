@@ -18,6 +18,10 @@
       "required": true,
       "type": "object"
     },
+    "pkg": {
+      "description": "identity of the habitat package under this supervisor's control",
+      "type": "string"
+    },
     "deps": {
       "description": "List of package dependencies",
       "required": true,

@@ -80,7 +80,13 @@ describe Habistone do
 
     it 'Transforms to json matching the schema' do
       config_json = member_config.refract(config_toml)
-      expect(config_json.to_json).to match_response_schema('ring_config_schema')
+
+      # test_config_schema is used here, which is a duplicate of
+      # ring_config_schema. The reason for a separate testing-only schema
+      # is to ensure configuration data is required and validated during our
+      # tests. In normal operation, we consider it to be A-OK if some config
+      # data is missing.
+      expect(config_json.to_json).to match_response_schema('test_config_schema')
     end
   end
 end
