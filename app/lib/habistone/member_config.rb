@@ -34,14 +34,13 @@ class Habistone
         bind: parsed_toml['bind'],
         hab: parsed_toml['hab'],
         cfg: parsed_toml['cfg'],
-        #pkg: project_deps(parsed_toml['pkg'])
-        #TODO base package. do separately? can there only be one?
+        pkg: parsed_toml['pkg']['ident'],
         deps: project_deps(parsed_toml['pkg']['deps']),
         sys: parsed_toml['sys']
       }
     end
 
-    #Flatten deps tree into a package list
+    # Flatten deps tree into a package list
     def project_deps(deps_tree)
       deps_list = Set.new
       project_deps_onto(deps_list, deps_tree)
@@ -51,9 +50,7 @@ class Habistone
     def project_deps_onto(deps_list, deps_tree)
       deps_tree.each do |dep|
         deps_list.add(dep['ident'])
-        if dep['deps'].any?
-          project_deps_onto(deps_list, dep['deps'])
-        end
+        project_deps_onto(deps_list, dep['deps']) unless dep['deps'].nil? || dep['deps'].empty?
       end
     end
   end

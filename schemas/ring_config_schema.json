@@ -32,6 +32,10 @@
         "description": "package defined configuration values",
         "type": "object"
       },
+      "pkg": {
+        "description": "identity of the habitat package under this supervisor's control",
+        "type": "string"
+      },
       "deps": {
         "description": "List of package dependencies",
         "type": "array",
@@ -51,7 +55,7 @@
           },
           "gossip_port":{
             "description": "Port for gossip messages",
-            "type": "string"
+            "type": "integer"
           },
           "hostname":{
             "description": "hostname for this supervisor",

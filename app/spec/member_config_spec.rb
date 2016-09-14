@@ -34,12 +34,52 @@ describe Habistone do
     end
   end
 
-  describe 'Transforming config data' do
+  describe '#project_deps and #project_deps_onto' do
+    it "returns a correct list of dependencies" do
+      deps_from_config = [
+        {
+          "ident" => "pkg1",
+          "deps" => [
+            { "ident" => "pkg1_dep1", "deps" => [] },
+            {
+              "ident" => "pkg1_dep2",
+              "deps" => [
+                { "ident" => "pkg1_dep2_dep1", "deps" => []}
+              ]
+            },
+          ]
+        },
+        { "ident" => "pkg2", "deps" => [] },
+        { "ident" => "pkg3", "deps" => [] },
+        {
+          "ident" => "pkg4",
+          "deps" => [
+            { "ident" => "pkg4_dep1", "deps" => [] }
+          ]
+        }
+      ]
+
+      expect(member_config.project_deps(deps_from_config)).to eq(
+        [
+          "pkg1",
+          "pkg1_dep1",
+          "pkg1_dep2",
+          "pkg1_dep2_dep1",
+          "pkg2",
+          "pkg3",
+          "pkg4",
+          "pkg4_dep1"
+        ]
+      )
+    end
+  end
+
+  describe 'config schema validation' do
     let(:config_toml) { File.read('spec/data/config.toml') }
 
     it 'Transforms to json matching the schema' do
       config_json = member_config.refract(config_toml)
-      expect(config_json.to_json).to match_response_schema('test_config_schema')
+      expect(config_json.to_json).to match_response_schema('ring_config_schema')
     end
   end
 end

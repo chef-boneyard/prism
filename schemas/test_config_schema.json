@@ -41,7 +41,7 @@
         "gossip_port":{
           "required": true,
           "description": "Port for gossip messages",
-          "type": "string"
+          "type": "integer"
         },
         "hostname":{
           "required": true,
