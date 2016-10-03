@@ -15,6 +15,7 @@ class Habistone
   def print_configuration
     puts "Data collector url: #{Habistone::Config.data_collector_url}"
     puts "Habitat supervisor host: #{Habistone::Config.supervisor_host}"
+    puts "Habitat supervisor port: #{Habistone::Config.supervisor_port}"
     puts "Habitat ring id: #{habitat_ring_id}"
     puts "Habitat ring alias: #{habitat_ring_alias}"
   end
@@ -38,7 +39,8 @@ class Habistone
 
   def absorb
     supervisor_host = Habistone::Config.supervisor_host
-    handle_http_exceptions_for { RestClient.get("http://#{supervisor_host}:9631/census").body }
+    supervisor_port = Habistone::Config.supervisor_port
+    handle_http_exceptions_for { RestClient.get("http://#{supervisor_host}:#{supervisor_port}/census").body }
   end
 
   def emit(message)

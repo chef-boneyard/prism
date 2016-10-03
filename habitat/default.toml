@@ -1,4 +1,5 @@
 data_collector_url='http://nginx/data-collector/v0/habitat/'
 data_collector_token='93a49a4f2482c64126f7b6015e6b0f30284287ee4054ff8807fb63d9cbd1c506'
 supervisor_host='localhost'
+supervisor_port=9631
 ssl_verification_enabled=true
