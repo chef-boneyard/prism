@@ -10,7 +10,7 @@
 include_recipe 'habitat-build::publish'
 
 #########################################################################
-# Push Dockerized version of our Hab pkg to our EC2 Container Registry
+# Push Dockerized version of our Hab pkg to Docker Hub
 #########################################################################
 
 execute 'export-prism-container' do
@@ -26,7 +26,7 @@ sudo #{hab_binary} pkg export docker chef/prism/#{prism_habitat_build_version}
   live_stream true
 end
 
-execute 'push-package-router-container' do
+execute 'push-prism-container' do
   command(lazy { <<-EOH
 docker push chef/prism:latest
 docker push chef/prism:#{prism_build_version}
