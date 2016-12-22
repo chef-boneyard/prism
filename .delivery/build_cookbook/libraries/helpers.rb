@@ -12,7 +12,7 @@ module BuildCookbook
 
     # 0.1.0-20160625155928
     def prism_build_version
-      @package_router_build_version ||= begin
+      @prism_build_version ||= begin
         with_server_config do
 
           environment = if %w(verify build).include?(node['delivery']['change']['stage'])
