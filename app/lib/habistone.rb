@@ -154,7 +154,7 @@ class Habistone
   end
 
   def habitat_ring_id
-    Habistone::Config.habitat_ring_id.empty? ? SecureRandom.uuid : Habistone::Config.habitat_ring_id
+    @ring_id ||= Habistone::Config.habitat_ring_id.empty? ? SecureRandom.uuid : Habistone::Config.habitat_ring_id
   end
 
   def habitat_ring_alias
