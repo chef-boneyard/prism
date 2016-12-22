@@ -6,6 +6,8 @@ require "habistone/member_config"
 
 class Habistone
   def initialize
+    @has_butterfly = false
+
     cli = Habistone::Cli.new
     cli.parse_options
     Habistone::Config.from_file(cli.config[:config_file]) if cli.config[:config_file]
@@ -21,6 +23,8 @@ class Habistone
   end
 
   def run
+    detect_butterfly_existence
+
     begin
       absorbed_findings = absorb
     rescue => e
@@ -38,8 +42,6 @@ class Habistone
   end
 
   def absorb
-    supervisor_host = Habistone::Config.supervisor_host
-    supervisor_port = Habistone::Config.supervisor_port
     handle_http_exceptions_for { RestClient.get("http://#{supervisor_host}:#{supervisor_port}/census").body }
   end
 
@@ -59,28 +61,23 @@ class Habistone
 
   def refract(json)
     ring_census = JSON.parse(json)
-    censuses = ring_census["census_list"]["censuses"]
-    service_groups = refract_service_groups(censuses)
+    censuses = has_butterfly? ? ring_census["censuses"] : ring_census["census_list"]["censuses"]
+
     {
       ring_id: habitat_ring_id, #TODO: Get ring id from encyrption when encryption is on
       ring_alias: habitat_ring_alias,
       last_update: Time.now.strftime("%Y-%m-%dT%H:%M:%SZ"),
-      prism_ip_address: ring_census["me"]["ip"],
-      service_groups: service_groups,
+      service_groups: refract_service_groups(censuses),
     }
   end
 
   def refract_service_groups(censuses)
     censuses.map do |census, service_group|
       service_group_name = census
-      members = refract_members(service_group["population"])
+
       {
         name: service_group_name,
-        in_event: service_group["in_event"],
-        service: service_group["service"],
-        group: service_group["group"],
-        organization: service_group["organization"],
-        members: members,
+        members: refract_members(service_group["population"]),
       }
     end
   end
@@ -88,22 +85,38 @@ class Habistone
   def refract_members(members)
     vis_members = Hash.new { |hash, key| hash[key] = Hash.new(&hash.default_proc) }
     members.each do |census_id, member|
-      member_config = Habistone::MemberConfig.new(member["ip"])
       id = member["member_id"]
-      vis_members[id]["census_id"] = census_id
-      vis_members[id]["member_id"] = member["member_id"]
-      vis_members[id]["ip"] = member["ip"]
-      vis_members[id]["leader"] = member["leader"]
-      vis_members[id]["hostname"] = member["hostname"]
-      vis_members[id]["status"] = diffract_status(member)
-      vis_members[id]["vote"] = member["vote"]
-      vis_members[id]["election"] = member["election"]
+
+      vis_members[id]["census_id"]             = census_id
+      vis_members[id]["member_id"]             = member["member_id"]
+      vis_members[id]["org"]                   = member["org"]
+      vis_members[id]["ip"]                    = member["ip"]
+      vis_members[id]["leader"]                = member["leader"]
+      vis_members[id]["follower"]              = member["follower"]
+      vis_members[id]["hostname"]              = member["hostname"]
+      vis_members[id]["status"]                = diffract_status(member)
+      vis_members[id]["persistent"]            = member["persistent"]
+      vis_members[id]["election_is_running"]   = member["election_is_running"]
+      vis_members[id]["election_is_no_quorum"] = member["election_is_no_quorum"]
+      vis_members[id]["election_is_finished"]  = member["election_is_finished"]
+      vis_members[id]["initialized"]           = member["initialized"]
+      vis_members[id]["port"]                  = member["port"]
+      vis_members[id]["exposes"]               = member["exposes"]
+
+      # The following keys are no longer part of the census payload
+      # starting with Habitat v0.14. They should be removed in a future
+      # release but are included here for backwards compatibility for
+      # any users running Habitat v0.13 and earlier.
+      vis_members[id]["vote"]        = member["vote"]
+      vis_members[id]["election"]    = member["election"]
       vis_members[id]["needs_write"] = member["needs_write"]
-      vis_members[id]["initialized"] = member["initialized"]
       vis_members[id]["suitability"] = member["suitability"]
-      vis_members[id]["port"] = member["port"]
-      vis_members[id]["exposes"] = member["exposes"]
       vis_members[id]["incarnation"] = member["incarnation"]
+
+      member_config = Habistone::MemberConfig.new(ip: member["ip"],
+                                                  service: member["service"],
+                                                  group: member["group"],
+                                                  has_butterfly: has_butterfly?)
       vis_members[id]["configuration"] = member_config.get_config
     end
 
@@ -146,5 +159,25 @@ class Habistone
 
   def habitat_ring_alias
     Habistone::Config.habitat_ring_alias.empty? ? "default" : Habistone::Config.habitat_ring_alias
+  end
+
+  def detect_butterfly_existence
+    RestClient.get("http://#{supervisor_host}:#{supervisor_port}/butterfly")
+  rescue RestClient::NotFound
+    @has_butterfly = false
+  else
+    @has_butterfly = true
+  end
+
+  def has_butterfly?
+    @has_butterfly
+  end
+
+  def supervisor_host
+    Habistone::Config.supervisor_host
+  end
+
+  def supervisor_port
+    Habistone::Config.supervisor_port
   end
 end

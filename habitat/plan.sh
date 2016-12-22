@@ -42,7 +42,7 @@ do_build() {
   export GEM_PATH="${_bundler_dir}:${GEM_HOME}"
 
   cd "${pkg_name}"
-  bundle install --jobs 2 --retry 5 --path vendor/bundle --binstubs
+  bundle install --jobs 2 --retry 5 --path vendor/bundle --binstubs --without test
 }
 
 do_install() {

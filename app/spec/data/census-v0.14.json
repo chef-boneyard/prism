@@ -1,0 +1,32 @@
+{
+  "censuses": {
+    "prism.default": {
+      "population": {
+        "01445ed9ea1343a6928d8ad43f4eb7b3": {
+          "member_id": "01445ed9ea1343a6928d8ad43f4eb7b3",
+          "service": "prism",
+          "group": "default",
+          "org": null,
+          "hostname": "e73aa93ac4a0",
+          "address": "172.17.0.2",
+          "ip": "172.17.0.2",
+          "port": "8080",
+          "exposes": [
+            "8080"
+          ],
+          "leader": null,
+          "follower": null,
+          "election_is_running": null,
+          "election_is_no_quorum": null,
+          "election_is_finished": null,
+          "initialized": null,
+          "alive": true,
+          "suspect": false,
+          "confirmed": false,
+          "persistent": true
+        }
+      },
+      "member_id": "b3a1aaedeb844a8fa074606ed6a2a06c"
+    }
+  }
+}

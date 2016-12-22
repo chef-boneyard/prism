@@ -5,7 +5,12 @@ require "support/schema_matcher"
 require "openssl"
 
 describe Habistone do
-  let(:member_config) { Habistone::MemberConfig.new("1.2.3.4") }
+  let(:member_config) do
+    Habistone::MemberConfig.new(ip: "1.2.3.4",
+                                service: "my_service",
+                                group: "default",
+                                has_butterfly: false)
+  end
 
   describe '#get_config' do
     context "when the HTTP call is successful" do
@@ -86,6 +91,28 @@ pkg4_dep1}
       # tests. In normal operation, we consider it to be A-OK if some config
       # data is missing.
       expect(config_json.to_json).to match_response_schema("test_config_schema")
+    end
+  end
+
+  describe "#config_url" do
+    context "when butterfly is available" do
+      it "returns the correct config URL" do
+        member_config = Habistone::MemberConfig.new(ip: "1.2.3.4",
+                                                    service: "my_service",
+                                                    group: "default",
+                                                    has_butterfly: true)
+        expect(member_config.send(:config_url)).to eq("http://1.2.3.4:9631/services/my_service/default/config")
+      end
+    end
+
+    context "when butterfly is not available" do
+      it "returns the correct config URL" do
+        member_config = Habistone::MemberConfig.new(ip: "1.2.3.4",
+                                                    service: "my_service",
+                                                    group: "default",
+                                                    has_butterfly: false)
+        expect(member_config.send(:config_url)).to eq("http://1.2.3.4:9631/config")
+      end
     end
   end
 end
