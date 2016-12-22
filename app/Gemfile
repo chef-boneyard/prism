@@ -10,4 +10,6 @@ gem "chefstyle"
 
 group :test do
   gem "json-schema"
+  gem "pry"
+  gem "rb-readline"
 end

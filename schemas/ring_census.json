@@ -19,11 +19,6 @@
       "required": true,
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
     },
-    "prism_ip_address": {
-      "description": "The IP address of the PRISM sending messages out.",
-      "type": "string",
-      "required": true
-    },
     "service_groups": {
       "type": "array",
       "uniqueItems": true,
@@ -37,36 +32,13 @@
             "type": "string",
             "required": true
           },
-          "in_event": {
-            "description": "A leader election event is underway",
-            "type": "boolean",
-            "required": true
-          },
-          "service": {
-            "description": "A service in Habitat is defined as a Habitat package running under a Habitat supervisor.",
-            "type": "string",
-            "required": true
-          },
-          "group": {
-            "description": "A service group is a logical grouping of services with the same package and topology type connected together in a ring.",
-            "type": "string",
-            "required": true
-          },
-          "organization": {
-            "description": "Organization that the service group is bound to.",
-            "type": [
-              "string",
-              "null"
-            ],
-            "required": true
-          },
           "members": {
             "required": true,
             "type": "object",
             "patternProperties": {
               "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-2][0-9]{2}:[0-9]{2}:[0-9]{2}Z$": {
                 "items": {
-                  "member_id": {
+                  "census_id": {
                     "description": "UUID of the census entry for this member. Used to make elections unique",
                     "type": "string",
                     "required": true
@@ -76,8 +48,18 @@
                     "type": "string",
                     "required": true
                   },
+                  "org": {
+                    "description": "the name of the organization for this service group member",
+                    "type": "string",
+                    "required": true
+                  },
                   "leader": {
                     "description": "True if this member is a leader",
+                    "type": "boolean",
+                    "required": true
+                  },
+                  "follower": {
+                    "description": "True if this member is a follower",
                     "type": "boolean",
                     "required": true
                   },
@@ -102,6 +84,14 @@
                       "detached"
                     ]
                   },
+                  "persistent": {
+                    "description": "True if the service group member is a persistent peer",
+                    "type": [
+                      "boolean",
+                      "null"
+                    ],
+                    "required": true
+                  },
                   "vote": {
                     "description": "The value of this member's vote during an election.",
                     "type": [
@@ -112,6 +102,30 @@
                   },
                   "election": {
                     "description": "True if we are in an election",
+                    "type": [
+                      "boolean",
+                      "null"
+                    ],
+                    "required": true
+                  },
+                  "election_is_running": {
+                    "description": "True if an election is taking place for this service group's topology",
+                    "type": [
+                      "boolean",
+                      "null"
+                    ],
+                    "required": true
+                  },
+                  "election_is_no_quorum": {
+                    "description": "True if a quorum is not available for an election to take place",
+                    "type": [
+                      "boolean",
+                      "null"
+                    ],
+                    "required": true
+                  },
+                  "election_is_finished": {
+                    "description": "True if an election is completed",
                     "type": [
                       "boolean",
                       "null"
@@ -133,7 +147,10 @@
                   },
                   "suitability": {
                     "description": "This is an arbitrary determination of our 'suitability' to a task; most likely, being the leader in an election.",
-                    "type": "integer",
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
                     "required": true
                   },
                   "port": {

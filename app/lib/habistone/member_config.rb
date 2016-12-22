@@ -2,15 +2,18 @@ require "toml"
 
 class Habistone
   class MemberConfig
-    attr_reader :supervisor_ip
+    attr_reader :supervisor_ip, :service_name, :group_name
 
-    def initialize(supervisor_ip)
-      @supervisor_ip = supervisor_ip
+    def initialize(params = {})
+      @supervisor_ip = params[:ip]
+      @service_name  = params[:service]
+      @group_name    = params[:group]
+      @has_butterfly = params[:has_butterfly]
     end
 
     def get_config
       begin
-        config_toml = RestClient.get("http://#{supervisor_ip}:9631/config").body
+        config_toml = RestClient.get(config_url).body
         refract(config_toml)
       rescue RestClient::ExceptionWithResponse => e
         {
@@ -51,6 +54,20 @@ class Habistone
       deps_tree.each do |dep|
         deps_list.add(dep["ident"])
         project_deps_onto(deps_list, dep["deps"]) unless dep["deps"].nil? || dep["deps"].empty?
+      end
+    end
+
+    private
+
+    def has_butterfly?
+      @has_butterfly
+    end
+
+    def config_url
+      if has_butterfly?
+        "http://#{supervisor_ip}:9631/services/#{service_name}/#{group_name}/config"
+      else
+        "http://#{supervisor_ip}:9631/config"
       end
     end
   end
