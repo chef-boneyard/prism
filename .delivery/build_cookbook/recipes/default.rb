@@ -34,7 +34,11 @@ docker login -u="#{delivery_secrets['docker']['user']}" -p="#{delivery_secrets['
   live_stream true
 end
 
-# change permissions on the docker config file so it's readable by dbuild
+# change permissions on the docker config file and directory so it's readable by dbuild
+execute 'fix docker directory permissions' do
+  command "chmod 755 #{node['delivery']['workspace_path']}/.docker"
+end
+
 execute 'fix docker config permissions' do
   command "chmod 644 #{node['delivery']['workspace_path']}/.docker/config.json"
 end
