@@ -1,3 +1,5 @@
+# :warning: This project is no longer maintained and won't work with any modern versions of Habitat :warning:
+
 # prism
 Paranormal Ring Information Sensing Monitorinator
 
